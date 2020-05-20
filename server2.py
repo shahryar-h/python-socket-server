@@ -3,7 +3,7 @@ import threading
 
 
 HEADER = 1024
-PORT = 9998
+PORT = 9994
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER,PORT)
 FORMAT = "utf-8"
@@ -24,13 +24,11 @@ def readDB():
         if not lineItems[0]:
             print("line \n {} \n ignored".format(line))
             continue
-            
-
         t = ()
         for item in lineItems:
             item = item.strip()
             t = t + (item,)
-        dataBase[len(dataBase)] = t
+        dataBase[t[0]] = t
     print(" DataBase read Successfully!!")
     print("{} Valid record read from Database".format(len(dataBase)))
     
@@ -42,15 +40,21 @@ def handleRequest(msg):
     code,*name = msg.split("|")
     print("received {} {}".format(code,name))
     if name:
-        return OPTIONS[int(code)](name[0])
+        return OPTIONS[int(code)](name)
     else:
         return OPTIONS[int(code)]()
 
 
 
-def create(name):
-    print('creating {}'.format(name))
-    return True
+def findCustomer(name):
+     
+    #print('creating {}'.format(name))
+ 
+    if name[0] in dataBase.keys(): 
+        tup = dataBase[name[0]]
+        return True, '|'.join(tup)
+    else: 
+        return True, "Customer Not Found"
 
 def read(name):
     print('reading {}'.format(name))
@@ -70,10 +74,10 @@ def printState():
 
 def exitServer():
     print('exiting server')
-    return False
+    return False,'Exit'
     
 OPTIONS = {
-    1:create,
+    1:findCustomer,
     2:read,
     3:update,
     4:delete,

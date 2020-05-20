@@ -3,7 +3,7 @@ import socket
 
 
 HEADER = 1024
-PORT = 9998
+PORT = 9994
 SERVER = socket.gethostbyname(socket.gethostname())
 
 FORMAT = "utf-8"
@@ -35,14 +35,50 @@ printMenu()
 
 # send(message)
 # print("1) Create <name> \n 2) Read <name> \n 3) Update <name> \n 4) delete <name> \n 5) Print state \n 6) Exit server")
-while True:
-    message = input('Enter command \n')
-    if message
-    send(message)
-    if message[0] == DISCONNECT_MESSAGE:
-        break
+# while True:
     
     
+#         try:
+#             message = int(input('Select:'))
+#             break
+#         except:
+#             print("That's not a valid option!")
+#     m = str(message)
+#     send(m)
 
+#     if m[0] == DISCONNECT_MESSAGE:
+#         break
+# while True:
+
+    # try:
+    #     # 1|asdsda|1211
+        
+    #     message = int(input('Select:'))
+    #     if message in range(1,9):
+    #         validatedMessage = str(message)
+    #         send(validatedMessage)
+    #     else:
+    #         print('Invalid command. Command must be in range 1 to 8')
+    #     if validatedMessage == DISCONNECT_MESSAGE:
+    #         break
+    #     printMenu()
+    # except:
+    #         print("That's not a valid option! Please enter command in range 1 to 8")\
+while True:
+    message = input('Select:')
+    if message.isnumeric() and int(message) in range(1,9):
+        if int(message) == 1: 
+            name = input('please enter name:')
+            mes = message +"|"+ name
+            send(mes)
+        
+
+        if int(message) == 5: 
+            send(message)
+    else:
+        print('Invalid command. Command must be in range 1 to 8')
+ 
+    if message == DISCONNECT_MESSAGE:
+        break
 
 # send(DISCONNECT_MESSAGE)
