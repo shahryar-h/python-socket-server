@@ -26,3 +26,5 @@ now we run the client program by running:
 python3 client2.py
 ```
 you may now see the client menu as follows:
+
+![GitHub Logo](/images/logo.png)
