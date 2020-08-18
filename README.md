@@ -27,4 +27,20 @@ python3 client2.py
 ```
 you may now see the client menu as follows:
 
-![GitHub Logo](/images/logo.png)
+![Client Menu](/images/client_menu.png)
+
+## Program Example:
+we can add a customer to data base by choosing option2:
+
+
+![add customer](/images/add_customer.png)
+
+
+and you can see the server's respond:
+
+![added customer](/images/added_customer.png)
+
+
+
+## Notes:
+you can see the project description in documentation folder.
