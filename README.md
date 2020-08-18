@@ -4,7 +4,7 @@ in this project I created a python client server application. there is a list of
 
 
 ### prerequisites:
-you need to have[python3](https://wiki.python.org/moin/BeginnersGuide/Download) installed on your machine
+you need to have [python3](https://wiki.python.org/moin/BeginnersGuide/Download) installed on your machine
 
 ### to run the program:
 
@@ -19,7 +19,7 @@ then navigate to the project folder in terminal. and run:
 ```
 python3 server2.py
 ```
-now thevserver is up. next, run another terminal and again navigate to the project's folder.
+now the server is up. next, run another terminal and again navigate to the project's folder.
 now we run the client program by running:
 
 ```
@@ -27,4 +27,16 @@ python3 client2.py
 ```
 you may now see the client menu as follows:
 
-![GitHub Logo](/images/logo.png)
+![Client Menu](/images/client_menu.png)
+
+## Program Example:
+we can add a customer to data base by choosing option2:
+
+
+![add customer](/images/add_customer.png)
+
+
+and you can see the server's respond:
+
+![added customer](/images/added_customer.png)
+
